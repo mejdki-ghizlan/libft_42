@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:39:45 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/06 22:44:58 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/06 22:06:57 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/07 00:18:04 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-void *ft_memset(void *b, int c, size_t len)
+#include <stdlib.h>
+char	*ft_strdup(const char *s1)
 {
-    unsigned char *d;
-    int i = 0;
-    d = (unsigned char *) b;
+	char *p;
+	char *d;
 
-    while (i < len)
-    {
-        d[i] = (unsigned char) c;
-        i++;
-    }
-    return (b);
+	p = (char *)malloc(ft_strlen(s1) + 1);
+	if (!p)
+		return (NULL);
+	d = p;
+	while (*s1)
+	{
+		*p = *s1;
+		s1++;
+		p++;
+	}
+	*p = '\0';
+	return (d);
 }
 
-// int main ()
+// int main()
 // {
-//     int b;
-// 	//11111000 00110000
-// 	//00000111 11010000
-// 	ft_memset(&b, 255, 4);
-// 	ft_memset(&b, 248, 2);
-// 	ft_memset(&b, 48, 1);
-// 	printf("%d", b);
+// 	const char *s1 = "ghizlan";
+// 	char *p;
+
+// 	p = ft_strdup(s1);
+// 	printf("%s", p);
 // }

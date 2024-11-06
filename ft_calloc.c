@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:39:45 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/06 22:44:58 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/06 21:52:46 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/06 23:06:20 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-void *ft_memset(void *b, int c, size_t len)
+#include <stdlib.h>
+void	*ft_calloc(size_t count, size_t size)
 {
-    unsigned char *d;
-    int i = 0;
-    d = (unsigned char *) b;
+	void *p;
 
-    while (i < len)
-    {
-        d[i] = (unsigned char) c;
-        i++;
-    }
-    return (b);
+	p = malloc(count * size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, count * size);
+	return (p);
 }
 
-// int main ()
+// int main()
 // {
-//     int b;
-// 	//11111000 00110000
-// 	//00000111 11010000
-// 	ft_memset(&b, 255, 4);
-// 	ft_memset(&b, 248, 2);
-// 	ft_memset(&b, 48, 1);
-// 	printf("%d", b);
+// 	size_t count = 10;
+// 	size_t size = 5;
+
+// 	int *p;
+// 	int i = 0;
+
+// 	p = ft_calloc(count, size);
+// 	while (i <= (count * size))    mafhamtchii
+// 	{
+// 		printf("%d", p[i]);
+// 		i++;
+// 	}
 // }
