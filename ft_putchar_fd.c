@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/13 21:26:24 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/14 22:41:02 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha(int arg)
+#include <fcntl.h>
+void ft_putchar_fd(char c, int fd)
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+    write(fd, &c, 1);
 }
+
+// int main()
+// {
+//     int fd = open("test_file.txt", O_RDWR | O_CREAT , 0755);
+//     ft_putchar_fd('g', fd);
+//     close(fd);
+// }

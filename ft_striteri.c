@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/13 21:24:46 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/14 21:44:35 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha(int arg)
+void rotone(unsigned int i, char *c)
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+    i = 3;
+    
+    *c  += i;
 }
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+    unsigned int i;
+
+    if (!s || !f)
+        return;
+    i = 0;
+    while (s[i])
+    {
+        f(i, &s[i]);
+        i++;
+    }
+}
+
+// int main()
+// {
+//     char s[5] = "huji";
+//     void (*f)(unsigned int, char *);
+//     f = rotone;
+//     ft_striteri(s, f);
+//     printf("%s", s);
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
+/*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 23:18:04 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/07 00:08:07 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:33:38 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <string.h>
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int position = 0;
+	int position;
 
+	position = 0;
 	while (*haystack && n--)
 	{
 		if (*haystack == *needle && n > 0)

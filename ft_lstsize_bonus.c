@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/15 03:26:50 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/15 03:39:50 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha(int arg)
+int ft_lstsize(t_list *lst)
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+    int size;
+
+    size = 0;
+    while (lst)
+    {
+        size++;
+        lst = lst->next;
+    }
+    return (size);
 }

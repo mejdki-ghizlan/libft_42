@@ -3,5 +3,5 @@
 
 int main()
 {
-	printf("%s", strnstr(NULL, "ert", 7));
+	printf("%d", 'a');
 }

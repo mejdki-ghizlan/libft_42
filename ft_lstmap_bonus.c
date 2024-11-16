@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/15 05:40:04 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/15 05:46:03 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha(int arg)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+    t_list *s;
+    
+    s = malloc(sizeof(t_list));
+    if (!s)
+        return (NULL);
+    
 }

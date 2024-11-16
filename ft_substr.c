@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/07 00:24:30 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/11 15:46:15 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha(int arg)
+#include <stdlib.h>
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+	char *p;
+
+	p = (char *)malloc(len + 1);
+	if (!p)
+		return (NULL);
+	ft_strlcpy(p, &s[start], len + 1);
+	return (p);
 }
+
+// int main()
+// {
+// 	char const *s = "qweryghizlanazerty";
+// 	unsigned int stt = 5;
+// 	size_t l = 7;
+// 	printf("%s", ft_substr(s, stt, l));
+// }

@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 17:34:07 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 18:43:51 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/15 04:00:12 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/15 04:27:39 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// void delete(void *s)
+// {
+//     free(s);
+// }
 
-int ft_isalpha(int arg)
+void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-        return (1);
-    return (0);
+    if (!lst || !del)
+        return;
+    del(lst->content);
+    free(lst);
 }
+
+// int main()
+// {
+//     t_list *node1;
+//     void(*del)(void*);
+//     del = delete;
+//     node1 = ft_lstnew(ft_strdup("abcdef"));
+//     printf("%s\n", node1->content);
+//     ft_lstdelone(node1, del);
+//     printf("\n%s\n", node1->content);
+// }

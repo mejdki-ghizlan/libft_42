@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:39:45 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/15 19:09:22 by gel-mejd         ###   ########.fr       */
+/*   Created: 2024/11/13 00:29:10 by gel-mejd          #+#    #+#             */
+/*   Updated: 2024/11/14 21:41:23 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-void *ft_memset(void *b, int c, size_t len)
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    unsigned char *d;
+    char *p;
     int i;
-    d = (unsigned char *) b;
-
+    if (!s || !f)
+        return (NULL);
+    p = malloc(ft_strlen(s) + 1);
+    if (!p)
+        return NULL;
     i = 0;
-    while (i < len)
+    while (s[i])
     {
-        d[i] = (unsigned char ) c;
+        p[i] = f((unsigned int )i, s[i]);
         i++;
     }
-    return (b);
+    p[i] = '\0';
+    return p;
 }
 
-int main ()
-{
-    int b;
-	//11111000 00110000
-	//00000111 11010000
-	ft_memset(&b, 0, 4);
-	ft_memset(&b, 5, 2);
-	ft_memset(&b, 57, 1);
-    
-	printf("%d", b);
-}
+// int main()
+// {
+//     char const *s = "abcdef";
+//     char (*f) (unsigned int , char);
+//     f = ttouuper;
+//     printf("%s", ft_strmapi(s, f));
+// }
