@@ -6,7 +6,7 @@
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 23:18:04 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/20 17:42:52 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/20 23:27:08 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	size_t	needle_size;
 
+	if (!haystack && n == 0)
+		return (NULL);
 	needle_size = ft_strlen(needle);
 	if (*needle == '\0')
 		return ((char *)haystack);
