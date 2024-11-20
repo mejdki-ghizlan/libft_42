@@ -15,13 +15,13 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*d;
-	size_t	i;
+	size_t			i;
 
-	d = (unsigned char *) b;
+	d = (unsigned char *)b;
 	i = 0;
 	while (i < len)
 	{
-		d[i] = (unsigned char) c;
+		d[i] = (unsigned char)c;
 		i++;
 	}
 	return (b);
@@ -41,7 +41,7 @@ void	*ft_memset(void *b, int c, size_t len)
 //     char b[10] = "abcdefghi";
 //     ft_memset(b, 'X', 4);
 //     printf("%s", b);
-//     return 0;
+//     return (0);
 // }
 
 // int main()
@@ -74,14 +74,14 @@ void	*ft_memset(void *b, int c, size_t len)
 //     int i = 0;
 //     char buff[10] = "abcdefghi";
 //     ft_memset(buff, -1, 5);  // -1 becomes 255 in unsigned char
-//     while ( i < 10) 
+//     while ( i < 10)
 //     {
 //         printf("%d ", (unsigned char)buff[i]);
 //         i++;
 //     }
 // }
 
-// int main() 
+// int main()
 // {
 //     size_t len = 1000000;  // 1 MB
 //     char *b = malloc(len);

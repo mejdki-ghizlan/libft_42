@@ -31,5 +31,5 @@ t_list	*ft_lstnew(void *content)
 // {
 //     t_list *node, *node1;
 
-//     node = ft_lstnew("otmane"); 
+//     node = ft_lstnew("otmane");
 // }

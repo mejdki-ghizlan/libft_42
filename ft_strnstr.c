@@ -6,7 +6,7 @@
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 23:18:04 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/20 02:46:28 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:42:52 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int	position;
+	size_t	needle_size;
 
-	if (!haystack && !n)
-		return (NULL);
+	needle_size = ft_strlen(needle);
 	if (*needle == '\0')
-		return (NULL);
-	position = 0;
-	while (*haystack && n-- > 0)
+		return ((char *)haystack);
+	while (*haystack && n-- >= needle_size)
 	{
-		if (*haystack == *needle)
-		{
-			position++;
-			needle++;
-			if (*needle == '\0')
-				return ((char *)(haystack - position + 1));
-		}
+		if (ft_strncmp(haystack, needle, needle_size) == 0)
+			return ((char *)haystack);
 		haystack++;
 	}
 	return (NULL);
 }
 
-int main()
-{
-	printf("%s\n", ft_strnstr("", NULL, 0));
-	printf("%s", strnstr("", NULL, 0));
-}
+// int main()
+// {
+// 	char *str = "MZIRIBMZIRIBMZE123";
+// 	char *needle = "MZIRIBMZE";
+// 	printf("%s\n", ft_strnstr(str, needle, strlen(needle)));
+// 	printf("%s", strnstr(str, needle, strlen(needle)));
+// }

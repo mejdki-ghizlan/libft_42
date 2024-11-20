@@ -6,7 +6,7 @@
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:05:58 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/19 13:35:02 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/20 22:14:37 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ static int	count_size(long m)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nb)
 {
 	char	*s;
 	char	*p;
-	int	m;
+	int		m;
+	long	n;
 
+	n = nb;
 	m = count_size(n);
 	s = (char *)malloc(m + 1);
 	if (!s)
@@ -56,9 +58,3 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-
-// int main()
-// {
-// 	int n = -2147483648;
-// 	printf("%s", ft_itoa(n));
-// }

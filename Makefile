@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-
+$(OBJS): libft.h
 
 clean:
 	$(RM) $(OBJS) $(OBJSB)
