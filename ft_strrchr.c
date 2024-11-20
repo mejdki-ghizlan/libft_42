@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
+/*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:22:12 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/05 20:16:35 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/20 01:41:09 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	char *p;
 
-	len = ft_strlen(s);
-	while (s[len] != c)
+	p = NULL;
+	while (*s)
 	{
-		len--;
+		if (*s == (char)c)
+			p = (char *)s;
+		s++;
 	}
-	if (s[len] == c)
-		return ((char *)&s[len]);
-	return (NULL);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (p);
 }
 
-int main()
-{
-	const char *s = "ghizlan";
-	int c = 'z';
-	// printf("%s", ft_strrchr(NULL, c));
-	printf("%s", strrchr(NULL, c));
-}
+// int main()
+// {
+// 	char *s = "flkjdkljfkl";
+// 	int c = '\0';
+// 	printf("%s\n", ft_strrchr(s, c));
+// 	printf("%s\n", strrchr(s, c));
+// }

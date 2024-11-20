@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
+/*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 21:52:46 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/06 23:06:20 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:38:05 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
+	void	*p;
 
 	p = malloc(count * size);
 	if (p == NULL)
@@ -27,10 +27,8 @@ void	*ft_calloc(size_t count, size_t size)
 // {
 // 	size_t count = 10;
 // 	size_t size = 5;
-
 // 	int *p;
 // 	int i = 0;
-
 // 	p = ft_calloc(count, size);
 // 	while (i <= (count * size))    mafhamtchii
 // 	{

@@ -6,67 +6,84 @@
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:18:58 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/11 15:46:04 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:32:20 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	**ft_split(char const *s, char c)
-{
-	int count_word;
-	size_t len;
-	int i;
-	const char *p;
-	char **s1;
-	char *s2;
-	char const *reset;
-	char **check;
 
-	if (s == NULL)
-		return (NULL);
-	reset = s;
-	count_word = 0;
+static int	count_word(char const *s, char c)
+{
+	int	cw;
+
+	cw = 0;
 	while (*s)
 	{
 		while (*s == c)
-		{
-			s++;	
-		}
-		if (*s == '\0')
-			break;
-		while (*s != c)
 			s++;
-		count_word++;
-		s++;
-		//return (count_word);
+		if (*s == '\0')
+			break ;
+		while (*s != c && *s != '\0')
+			s++;
+		cw++;
 	}
-	printf("%d\n", count_word);
-	
-	s = reset;
-	s1 = malloc(count_word * sizeof(char *) + 1);
-	if (!s1)
-		return NULL;
+	return (cw);
+}
+
+static void	ft_free(char **s1)
+{
+	char	**p;
+
+	p = s1;
+	while (*s1)
+	{
+		free(*s1);
+		*s1 = NULL;
+		s1++;
+	}
+	free (p);
+}
+
+static void	healper(char **s1, const char *s, char c)
+{
+	size_t	len;
+	int	i;
+	const char	*p;
+
 	i = 0;
-	while (i < count_word)
+	while (i < count_word(s, c))
 	{
 		len = 0;
 		while (*s == c)
 			s++;
 		p = s;
-		while (*s != c)
+		while (*s != c && *s != '\0')
 		{
 			s++;
 			len++;
 		}
-		//return (len);
 		*s1 = (char *)malloc(len + 1);
-		*s1= "otmane";
-		ft_strlpy(*s1, p, len + 1);
-		printf("%s\n", *s1);
+		if (!*s1)
+			ft_free(s1);
+		ft_strlcpy(*s1, p, len);
 		i++;
 		s1++;
 	}
 	*s1 = (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int	cw;
+	char	**s1;
+
+	if (s == NULL)
+		return (NULL);
+	cw = count_word(s, c);
+	s1 = malloc((cw + 1) * sizeof(char *));
+	if (!s1)
+		return (NULL);
+	healper(s1, s, c);
 	return (s1);
 }
 

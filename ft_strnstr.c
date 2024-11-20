@@ -6,20 +6,24 @@
 /*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 23:18:04 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/16 17:33:38 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/20 02:46:28 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int position;
+	int	position;
 
+	if (!haystack && !n)
+		return (NULL);
+	if (*needle == '\0')
+		return (NULL);
 	position = 0;
-	while (*haystack && n--)
+	while (*haystack && n-- > 0)
 	{
-		if (*haystack == *needle && n > 0)
+		if (*haystack == *needle)
 		{
 			position++;
 			needle++;
@@ -28,11 +32,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 		}
 		haystack++;
 	}
-	return (0);
+	return (NULL);
 }
 
-// int main()
-// {
-// 	printf("%s\n", ft_strnstr("hghgedfhotm anefjhgarth", "otmane", 15));
-// 	printf("%s", strnstr("hgjgedfhfjhotm anegarth", "otmane", 15));
-// }
+int main()
+{
+	printf("%s\n", ft_strnstr("", NULL, 0));
+	printf("%s", strnstr("", NULL, 0));
+}

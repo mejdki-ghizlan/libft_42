@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
+/*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 22:06:57 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/11/07 00:18:04 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:34:03 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+
 char	*ft_strdup(const char *s1)
 {
-	char *p;
-	char *d;
+	char	*p;
+	char	*d;
 
 	p = (char *)malloc(ft_strlen(s1) + 1);
 	if (!p)
@@ -35,7 +35,6 @@ char	*ft_strdup(const char *s1)
 // {
 // 	const char *s1 = "ghizlan";
 // 	char *p;
-
 // 	p = ft_strdup(s1);
 // 	printf("%s", p);
 // }

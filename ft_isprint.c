@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gel-mejd <gel-mejd@c2r5p3.1337.ma>         +#+  +:+       +#+        */
+/*   By: gel-mejd <gel-mejd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:32:09 by gel-mejd          #+#    #+#             */
-/*   Updated: 2024/10/28 15:35:45 by gel-mejd         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:36:25 by gel-mejd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int arg)
+int	ft_isprint(int arg)
 {
-    if (arg >= 32 && arg <= 127)
-        return (1);
-    return (1);
+	if (arg >= 32 && arg < 127)
+		return (1);
+	return (0);
 }
